@@ -6,6 +6,7 @@ Every recursive function must have:
 
 ✅ 2. Recursive Case :The function calls itself with a smaller/simpler input.
 
+
 def factorial(n):
     if n == 0:          # Base case
         return 1
@@ -20,17 +21,17 @@ Python uses a call stack.
 
 Each recursive call:
 
-Gets its own memory space
+                            Gets its own memory space
 
-Stores local variables
+                            Stores local variables
 
-Waits until deeper calls return
+                            Waits until deeper calls return
 
 Execution happens in two phases:
 
-Going down the stack (function calls)
+                            Going down the stack (function calls)
 
-Coming up the stack (returning values)
+                            Coming up the stack (returning values)
 
 
 Types :
@@ -43,6 +44,8 @@ def func(n):
     if n == 0:
         return
     func(n-1)
+
+    
 2️⃣ Indirect Recursion
 
 Function A calls Function B, and B calls A.
@@ -54,6 +57,8 @@ def A(n):
 def B(n):
     if n > 0:
         A(n-1)
+
+
 3️⃣ Linear Recursion
 
 Function makes only one recursive call.
@@ -61,6 +66,7 @@ Function makes only one recursive call.
 Example: Factorial
 
 Time complexity → O(n)
+
 
 4️⃣ Binary (Tree) Recursion
 
@@ -75,6 +81,7 @@ def fib(n):
 
 Time complexity → O(2^n)
 
+
 5️⃣ Tail Recursion
 
 Recursive call is the last operation in the function.
@@ -85,6 +92,7 @@ def fact(n, acc=1):
     return fact(n-1, acc*n)
 
 ⚠ Python does NOT optimize tail recursion.
+
 
 6️⃣ Head Recursion
 
@@ -143,6 +151,7 @@ Default recursion depth ≈ 1000
 import sys
 print(sys.getrecursionlimit())
 
+
 To increase:
 sys.setrecursionlimit(10**6)
 
@@ -162,3 +171,8 @@ sys.setrecursionlimit(10**6)
         Every Python function call also consumes C stack memory.
 
         That memory is controlled by the OS, not Python.
+
+
+🌳 Recursion Tree
+
+A recursion tree is a diagram that shows how recursive calls expand and branch during execution.
