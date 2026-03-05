@@ -1,55 +1,50 @@
-Recursion: When a function calls itself until a specified condition is met
+# Recursion
 
-Every recursive function must have:
+Recursion occurs when a function calls itself until a specified condition is met.
 
-✅ 1. Base Case :The stopping condition that prevents infinite recursion.
+Every recursive function must have two main components:
+1. ✅ **Base Case**: The stopping condition that prevents infinite recursion.
+2. ✅ **Recursive Case**: The function calls itself with a smaller/simpler input.
 
-✅ 2. Recursive Case :The function calls itself with a smaller/simpler input.
-
-
+```python
 def factorial(n):
     if n == 0:          # Base case
         return 1
     return n * factorial(n - 1)   # Recursive case
+```
 
-Time Complexity:O(n)
+- **Time Complexity:** `O(n)`
+- **Space Complexity:** `O(n)` (due to the recursion stack)
 
-Space Complexity:O(n) (due to recursion stack)
+---
 
+## The Call Stack
 
-Python uses a call stack.
-
-Each recursive call:
-
-                            Gets its own memory space
-
-                            Stores local variables
-
-                            Waits until deeper calls return
+Python uses a call stack to keep track of function calls. Each recursive call:
+- Gets its own memory space
+- Stores its local variables
+- Waits until deeper calls return
 
 Execution happens in two phases:
+1. **Going down the stack:** Making function calls.
+2. **Coming up the stack:** Returning values.
 
-                            Going down the stack (function calls)
+---
 
-                            Coming up the stack (returning values)
+## Types of Recursion
 
-
-Types :
-
-1️⃣ Direct Recursion
-
+### 1️⃣ Direct Recursion
 A function calls itself directly.
-
+```python
 def func(n):
     if n == 0:
         return
     func(n-1)
+```
 
-    
-2️⃣ Indirect Recursion
-
-Function A calls Function B, and B calls A.
-
+### 2️⃣ Indirect Recursion
+Function `A` calls Function `B`, and Function `B` calls Function `A`.
+```python
 def A(n):
     if n > 0:
         B(n-1)
@@ -57,122 +52,113 @@ def A(n):
 def B(n):
     if n > 0:
         A(n-1)
+```
 
+### 3️⃣ Linear Recursion
+The function makes only one recursive call at a time.
+- **Example:** Factorial
+- **Time Complexity:** `O(n)`
 
-3️⃣ Linear Recursion
-
-Function makes only one recursive call.
-
-Example: Factorial
-
-Time complexity → O(n)
-
-
-4️⃣ Binary (Tree) Recursion
-
-Function makes two or more recursive calls.
-
-Example: Fibonacci
-
+### 4️⃣ Binary (Tree) Recursion
+The function makes two or more recursive calls.
+- **Example:** Fibonacci sequence
+```python
 def fib(n):
     if n <= 1:
         return n
     return fib(n-1) + fib(n-2)
+```
+- **Time Complexity:** `O(2^n)`
 
-Time complexity → O(2^n)
-
-
-5️⃣ Tail Recursion
-
-Recursive call is the last operation in the function.
-
+### 5️⃣ Tail Recursion
+The recursive call is the very last operation in the function.
+```python
 def fact(n, acc=1):
     if n == 0:
         return acc
     return fact(n-1, acc*n)
+```
+> ⚠️ **Note:** Python does **NOT** optimize tail recursion.
 
-⚠ Python does NOT optimize tail recursion.
-
-
-6️⃣ Head Recursion
-
-Recursive call happens first, then operations.
-
+### 6️⃣ Head Recursion
+The recursive call happens first, before any other operations.
+```python
 def print_numbers(n):
     if n == 0:
         return
     print_numbers(n-1)
     print(n)
+```
 
+---
 
-Recursion vs Iteration
+## Recursion vs Iteration
 
-Uses call stack  	        Uses loops
-Cleaner for tree problems	More memory efficient
-May cause stack overflow	No stack overflow risk
-Slower in Python          	Faster
+| Feature | Recursion | Iteration |
+|---------|-----------|-----------|
+| **Mechanism** | Uses the call stack | Uses loops (`for`, `while`) |
+| **Use Case** | Cleaner for tree/graph problems | More memory efficient |
+| **Risk** | May cause stack overflow | No stack overflow risk |
+| **Performance (Python)** | Slower | Faster |
 
+---
 
-Applications of Recursion in DSA:
+## Applications of Recursion in DSA
 
-                        🌳 Tree Traversals (Inorder, Preorder, Postorder)
+- 🌳 **Tree Traversals:** Inorder, Preorder, Postorder
+- 🔎 **DFS:** Depth First Search in Graphs/Trees
+- 🔁 **Backtracking:** e.g., N-Queens, Sudoku Solver
+- ⚡ **Divide and Conquer:** Breaking problems into smaller subproblems
+- 🧠 **Dynamic Programming:** Top-down approach (Memoization)
+- 📦 **Merge Sort**
+- ⚡ **Quick Sort**
+- 🔢 **Binary Search**
 
-                        🔎 DFS (Depth First Search)
+---
 
-                        🔁 Backtracking
+## Pros and Cons
 
-                        ⚡ Divide and Conquer
+### ✅ Advantages
+- Code becomes short and clean
+- Natural and intuitive for tree/graph problems
+- Easy to implement divide-and-conquer algorithms
 
-                        🧠 Dynamic Programming (Top-down)
+### ❌ Disadvantages
+- Uses extra memory (stack space)
+- Slower due to function call overhead
+- Risk of stack overflow for deep recursion levels
+- Can be hard to debug sometimes
 
-                        📦 Merge Sort
+---
 
-                        ⚡ Quick Sort
+## Python Recursion Limit
 
-                        🔢 Binary Search
+The default recursion depth in Python is **≈ 1000**.
 
-
-Advantages of Recursion:
-
-                        ✅ Code becomes short and clean
-                        ✅ Natural for tree/graph problems
-                        ✅ Easy to implement divide-and-conquer
-
-Disadvantages of Recursion:
-
-                        ❌ Uses extra memory (stack)
-                        ❌ Slower due to function call overhead
-                        ❌ Risk of stack overflow
-                        ❌ Hard to debug sometimes
-
-
-Default recursion depth ≈ 1000
-
+To check your current limit:
+```python
 import sys
 print(sys.getrecursionlimit())
+```
 
-
-To increase:
+To increase the limit:
+```python
+import sys
 sys.setrecursionlimit(10**6)
+```
 
-        ✅ Yes — but only at the Python interpreter level.
-        ❗ It does NOT increase the actual C stack memory.
+**Wait! Is increasing the limit always safe?**
+✅ Yes — but only at the Python interpreter level.
+❗ It does **NOT** increase the actual C stack memory.
 
-        It does NOT:
+Re-setting the recursion limit does **NOT**:
+- Increase the C stack size
+- Increase system memory
+- Prevent segmentation faults
 
-        Increase C stack size
+Python runs on top of C. Every Python function call also consumes C stack memory, and that memory is controlled by the Operating System, not Python.
 
-        Increase system memory
+---
 
-        Prevent segmentation faults
-
-        Python runs on top of C.
-
-        Every Python function call also consumes C stack memory.
-
-        That memory is controlled by the OS, not Python.
-
-
-🌳 Recursion Tree
-
-A recursion tree is a diagram that shows how recursive calls expand and branch during execution.
+## 🌳 Recursion Tree
+A recursion tree is a diagram that shows how recursive calls expand and branch during execution. It is highly useful in calculating the time complexity of recursive functions (e.g., using the Master Theorem or substitution).
