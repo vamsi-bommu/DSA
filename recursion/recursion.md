@@ -147,18 +147,18 @@ import sys
 sys.setrecursionlimit(10**6)
 ```
 
-**Wait! Is increasing the limit always safe?**
+**Is increasing the limit always safe?**
 ✅ Yes — but only at the Python interpreter level.
 ❗ It does **NOT** increase the actual C stack memory.
 
-Re-setting the recursion limit does **NOT**:
+It does **NOT**:
 - Increase the C stack size
 - Increase system memory
 - Prevent segmentation faults
 
-Python runs on top of C. Every Python function call also consumes C stack memory, and that memory is controlled by the Operating System, not Python.
+Python runs on top of C. Every Python function call also consumes C stack memory, and that memory is controlled by the OS, not Python.
 
 ---
 
 ## 🌳 Recursion Tree
-A recursion tree is a diagram that shows how recursive calls expand and branch during execution. It is highly useful in calculating the time complexity of recursive functions (e.g., using the Master Theorem or substitution).
+A recursion tree is a diagram that shows how recursive calls expand and branch during execution.
