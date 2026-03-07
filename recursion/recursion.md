@@ -1,10 +1,10 @@
 # Recursion
 
-Recursion occurs when a function calls itself until a specified condition is met.
+Recursion: when a function calls itself until a specified condition is met.
 
 Every recursive function must have two main components:
-1. ✅ **Base Case**: The stopping condition that prevents infinite recursion.
-2. ✅ **Recursive Case**: The function calls itself with a smaller/simpler input.
+1. **Base Case**: The stopping condition that prevents infinite recursion.
+2. **Recursive Case**: The function calls itself with a smaller/simpler input.
 
 ```python
 def factorial(n):
