@@ -14,7 +14,6 @@ def f(i,n):
     f(i-1,n)
     print(i,end=" ")
     
-
 #f(N,N)
 
 
@@ -37,5 +36,22 @@ def f(i,n):
     
 #f(1,N)
 
+
+#sum of N numbers (parameterised)
+def f(i,sum):
+    if i<1:
+        print(sum)
+        return 
+    return f(i-1,sum+i)
+
+#f(n,sum=0)
+
+
+#sum of N numbers (functional)
+def f(n):
+    if n==0:
+        return 0
+    return n+f(n-1)
    
+#print(f(N))
 
