@@ -20,7 +20,7 @@ def factorial(n):
 
 ## The Call Stack
 
-Python uses a call stack to keep track of function calls. Each recursive call:
+Python uses a call stack. Each recursive call:
 - Gets its own memory space
 - Stores its local variables
 - Waits until deeper calls return
@@ -31,7 +31,7 @@ Execution happens in two phases:
 
 ---
 
-## Types of Recursion
+## Types
 
 ### 1️⃣ Direct Recursion
 A function calls itself directly.
@@ -58,6 +58,7 @@ def B(n):
 The function makes only one recursive call at a time.
 - **Example:** Factorial
 - **Time Complexity:** `O(n)`
+- **Space Complexity:** `O(n)` 
 
 ### 4️⃣ Binary (Tree) Recursion
 The function makes two or more recursive calls.
@@ -69,9 +70,10 @@ def fib(n):
     return fib(n-1) + fib(n-2)
 ```
 - **Time Complexity:** `O(2^n)`
+- **Space Complexity:** `O(n)` 
 
 ### 5️⃣ Tail Recursion
-The recursive call is the very last operation in the function.
+Recursive call is the last operation in the function.
 ```python
 def fact(n, acc=1):
     if n == 0:
@@ -81,7 +83,7 @@ def fact(n, acc=1):
 > ⚠️ **Note:** Python does **NOT** optimize tail recursion.
 
 ### 6️⃣ Head Recursion
-The recursive call happens first, before any other operations.
+Recursive call happens first, then operations.
 ```python
 def print_numbers(n):
     if n == 0:
@@ -127,11 +129,9 @@ def print_numbers(n):
 - Uses extra memory (stack space)
 - Slower due to function call overhead
 - Risk of stack overflow for deep recursion levels
-- Can be hard to debug sometimes
+- Hard to debug sometimes
 
 ---
-
-## Python Recursion Limit
 
 The default recursion depth in Python is **≈ 1000**.
 
@@ -141,7 +141,7 @@ import sys
 print(sys.getrecursionlimit())
 ```
 
-To increase the limit:
+To increase:
 ```python
 import sys
 sys.setrecursionlimit(10**6)
