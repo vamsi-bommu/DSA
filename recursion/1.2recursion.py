@@ -20,8 +20,7 @@ def palindrome(arr,l,r):
         return False
     return palindrome(arr,l+1,r-1)
 
-arr="dummud"
-print(palindrome(arr,l=0,r=len(arr)-1))
+s="dummud"
+print(palindrome(s,l=0,r=len(s)-1))
 TC=O(N)  #N/2   AS we go till middle
 SC=O(N)  #N/2   AS we go till middle
-
