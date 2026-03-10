@@ -46,4 +46,4 @@ def fib(n):
 
 print(fib(8))
 TC=O(2**N)  #each call makes 2 recursive calls
-SC=O(N)     #
+SC=O(N)     #at most N calls in the call stack
