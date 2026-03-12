@@ -162,3 +162,7 @@ Python runs on top of C. Every Python function call also consumes C stack memory
 
 ## 🌳 Recursion Tree
 A recursion tree is a diagram that shows how recursive calls expand and branch during execution.
+
+
+## Subsequence
+A contigious/ non-contigious subsequence which follows the order
