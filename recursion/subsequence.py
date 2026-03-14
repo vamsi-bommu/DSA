@@ -69,6 +69,10 @@ def countsubseq(i,s,sum,arr,c):
     return c
     
     #alternative way (standard way)
+    #if i>=len(arr):
+    #    if sum==s:
+    #     return 1
+    # return 0
     #l=countsubseq(i+1,s+arr[i],sum,arr) #no need to carry a variable c
     #r=countsubseq(i+1,s,sum,arr)
     #return l+r
