@@ -28,3 +28,23 @@ def subseq(i,a,arr,sum,s):
 
 subseq(0,[],[1,2,1,1],0,2)
 
+
+#print only one subsequence whose sum is k
+
+def singlesubseq(i,a,arr,sum,s):
+    if i>=len(arr):
+        if s==sum:
+            print(a)
+            return True
+        return False
+
+    a.append(arr[i])
+
+    if singlesubseq(i+1,a,arr,sum,s+arr[i]):
+        return True
+    a.pop()
+    if singlesubseq(i+1,a,arr,sum,s):
+        return True
+
+singlesubseq(0,[],[1,21,11,11],2,0)
+    
