@@ -46,5 +46,24 @@ def singlesubseq(i,a,arr,sum,s):
     if singlesubseq(i+1,a,arr,sum,s):
         return True
 
+    #if we don't have any sequence and we ran out of entire array
+    return False
+
 singlesubseq(0,[],[1,21,11,11],2,0)
+
+
+#print the count of all subsequences which has sum k
+
+def countsubseq(i,s,sum,arr,c):
+    if i>=len(arr):
+        if s==sum:
+             c+=1
+        return c
+    
+    c=countsubseq(i+1,s+arr[i],sum,arr,c)
+    c=countsubseq(i+1,s,sum,arr,c)
+    return c
+
+print(countsubseq(0,0,2,[1,2,1,1],0))
+
     
