@@ -39,10 +39,11 @@ def singlesubseq(i,a,arr,sum,s):
         return False
 
     a.append(arr[i])
-
-    if singlesubseq(i+1,a,arr,sum,s+arr[i]):
+    s+=arr[i]
+    if singlesubseq(i+1,a,arr,sum,s):
         return True
     a.pop()
+    s-=arr[i]
     if singlesubseq(i+1,a,arr,sum,s):
         return True
 
@@ -60,9 +61,17 @@ def countsubseq(i,s,sum,arr,c):
              c+=1
         return c
     
-    c=countsubseq(i+1,s+arr[i],sum,arr,c)
+    s+=arr[i]
+    c=countsubseq(i+1,s,sum,arr,c)
+
+    s-=arr[i]
     c=countsubseq(i+1,s,sum,arr,c)
     return c
+    
+    #alternative way (standard way)
+    #l=countsubseq(i+1,s+arr[i],sum,arr) #no need to carry a variable c
+    #r=countsubseq(i+1,s,sum,arr)
+    #return l+r
 
 print(countsubseq(0,0,2,[1,2,1,1],0))
 
