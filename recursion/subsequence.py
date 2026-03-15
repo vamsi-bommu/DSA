@@ -77,6 +77,4 @@ def countsubseq(i,s,sum,arr,c):
     #r=countsubseq(i+1,s,sum,arr)
     #return l+r
 
-print(countsubseq(0,0,2,[1,2,1,1],0))
-
-    
+print(countsubseq(0,0,2,[1,2,1,1],0))    
