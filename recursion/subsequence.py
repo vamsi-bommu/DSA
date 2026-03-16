@@ -79,7 +79,9 @@ def countsubseq(i,s,sum,arr,c):
 
 print(countsubseq(0,0,2,[1,2,1,1],0))    
 
-print("kkkkkkkkkkkk")
+
+#print all combination sum
+
 def combinationSum(i,a,arr,target,result):
     if i>=len(arr):
         if sum(a)==target:
