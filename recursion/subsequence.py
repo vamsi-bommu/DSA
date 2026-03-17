@@ -12,6 +12,7 @@ def subsequence(n,a,arr):
     
 subsequence(0,[],arr=[3,1,2,7])
 
+
 #print subsequences whose sum is k
 
 def subseq(i,a,arr,sum,s):
