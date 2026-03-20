@@ -81,22 +81,21 @@ def countsubseq(i,s,sum,arr,c):
 print(countsubseq(0,0,2,[1,2,1,1],0))    
 
 
-#print all combination sum
+#print all combinations whose sum is equal to target
 
 def combinationSum(i,a,arr,target,result):
     if i>=len(arr):
         if sum(a)==target:
             result.append(a.copy())
 
-        return result
+        return
     
-    if sum(a)+arr[i]<target:
+    if sum(a)+arr[i]<=target:
         a.append(arr[i])
-        result=combinationSum(i,a,arr,target,result)
+        combinationSum(i,a,arr,target,result)
         a.pop()
 
-    result=combinationSum(i+1,a,arr,target,result)
+    combinationSum(i+1,a,arr,target,result)
 
-    return result
 
-print(combinationSum(0,[],[2,2,3,7],7,[]))
+print(combinationSum(0,[],[2,3,5,7],7,[]))
