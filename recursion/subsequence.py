@@ -82,6 +82,7 @@ print(countsubseq(0,0,2,[1,2,1,1],0))
 
 
 #print all combinations whose sum is equal to target
+#combination sum 1
 
 def combinationSum(i,a,arr,target,result):
     if i>=len(arr):
@@ -103,3 +104,25 @@ print(combinationSum(0,[],[2,3,5,7],7,[]))
 #TC: O((2^t)*k)   ---> k is the avg time taken to put 'a' into the result list,for an index 2 options will be there but it can be any no.of times we take the same element
 #SC: O(k*x)   ---> k is the avg size of the list 'a' and x is the number of such lists {here we don't take auxilary stack space because it is unpredictable}
 
+
+#combination sum 2
+
+def combinationSum2(i,a,arr,target,result):
+    if sum(a)>target:
+        return
+
+    if i>=len(arr):
+        if sum(a)==target and sorted(a) not in result:
+            result.append(sorted(a.copy()))
+
+        return 
+
+    
+    a.append(arr[i])
+    combinationSum2(i+1,a,arr,target,result)
+    a.pop()
+    combinationSum2(i+1,a,arr,target,result)
+
+ans=[]
+combinationSum2( 0,[],[2,5,2,1,2],5,ans)
+print(ans)
