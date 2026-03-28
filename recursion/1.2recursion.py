@@ -9,8 +9,8 @@ def swap(arr,l,r):
 arr=[1,2,3,4,5]
 swap(arr,l=0,r=len(arr)-1)
 print(arr)
-TC=O(N)  #N/2 AS we go till middle
-SC=O(N)  #N/2 AS we go till middle
+# TC=O(N)  #N/2 AS we go till middle
+# SC=O(N)  #N/2 AS we go till middle
 
 #palindrome check
 def palindrome(arr,l,r):
@@ -22,8 +22,8 @@ def palindrome(arr,l,r):
 
 s="dummud"
 print(palindrome(s,l=0,r=len(s)-1))
-TC=O(N)  #N/2   AS we go till middle
-SC=O(N)  #N/2   AS we go till middle
+# TC=O(N)  #N/2   AS we go till middle
+# SC=O(N)  #N/2   AS we go till middle
 
 
 # #Nth fibonacci 
@@ -35,8 +35,8 @@ for i in range(N-2):
     n=t
 
 print(n)
-TC=O(N)
-SC=O(1)
+# TC=O(N)
+# SC=O(1)
 
 #Nth fibonacci using recursion
 def fib(n):
@@ -45,5 +45,5 @@ def fib(n):
     return fib(n-1)+fib(n-2)
 
 print(fib(8))
-TC=O(2**N)  #each call makes 2 recursive calls
-SC=O(N)     #at most N calls in the call stack
+# TC=O(2**N)  #each call makes 2 recursive calls
+# SC=O(N)     #at most N calls in the call stack
