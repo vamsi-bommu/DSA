@@ -108,7 +108,9 @@ def combinationSum(i, a, arr, target, result):
     combinationSum(i + 1, a, arr, target, result)
 
 
-print(combinationSum(0, [], [2, 3, 5, 7], 7, []))
+result = []
+print(combinationSum(0, [], [2, 3, 5, 7], 7, result))
+print(result)
 
 # TC: O((2^t)*k)   ---> k is the avg time taken to put 'a' into the result list,for an index 2 options will be there but it can be any no.of times we take the same element
 # SC: O(k*x)   ---> k is the avg size of the list 'a' and x is the number of such lists {here we don't take auxilary stack space because it is unpredictable}
