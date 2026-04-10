@@ -144,18 +144,20 @@ print(ans)
 
 
 def combinationSum2o(i, a, arr, target, result):
-    if sum(a) > target:
-        return
 
-    if sum(a) == target:
-        result.append(a.copy())
+    if target == 0:
+        result.append(a[:])
         return
 
     for j in range(i, len(arr)):
-        if arr[j - 1] != arr[j]:
-            a.append(arr[j])
-            combinationSum2o(j + 1, a, arr, target, result)
-            a.pop()
+        if j != i and arr[j - 1] == arr[j]:
+            continue
+
+        if arr[j] > target:
+            break
+        a.append(arr[j])
+        combinationSum2o(j + 1, a, arr, target - arr[j], result)
+        a.pop()
 
 
 result = []
