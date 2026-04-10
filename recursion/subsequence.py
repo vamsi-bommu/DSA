@@ -161,5 +161,5 @@ def combinationSum2o(i, a, arr, target, result):
 
 
 result = []
-combinationSum2o(0, [], [1, 1, 1, 2, 2], 4, result)
+combinationSum2o(0, [], sorted([1, 1, 1, 2, 2]), 4, result)
 print(result)
