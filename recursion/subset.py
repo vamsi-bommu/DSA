@@ -17,6 +17,9 @@ result = []
 subset_sums(0, 0, [1, 2, 1], result)
 print(result)
 
+#TC :
+#SC :
+
 
 # subset sum II
 
@@ -37,5 +40,7 @@ def subset_sum_II(i, a, arr, result):
 
 result = []
 subset_sum_II(0, [], sorted(nums), result)
-return (result)
+print(result)
 
+#TC :
+#SC :
