@@ -163,3 +163,6 @@ def combinationSum2o(i, a, arr, target, result):
 result = []
 combinationSum2o(0, [], sorted([1, 1, 1, 2, 2]), 4, result)
 print(result)
+
+# TC:O((2**n)*k  k=Avg length of a
+# SC: O(n*k*x)   x=no.of combinations
