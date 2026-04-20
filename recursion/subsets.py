@@ -43,5 +43,6 @@ result = []
 subset_sum_II(0, [], sorted([1, 2, 2, 2, 3, 3]), result)
 print(result)
 
-# TC : 
-# SC :
+# TC : O(2^n x n)  Assuming that the length of a is approx n (can be k also)
+# SC : O(2^n x k)  Assuming that avg length of each subset is 'k'
+#      +O(n)  Auxiliary stack space 
