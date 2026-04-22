@@ -23,7 +23,7 @@ permute([], [0] * len(nums), nums, result, len(nums))
 print(result)
 
 # TC : O(N*N!)  #N for copying the array
-# SC : O(N+N+N+N!)     # N for a, N for map, N for stack space and N! for the result
+# SC : O(N+N+N+N*N!)     # N for a, N for map, N for stack space and N*N! for the result array
 
 
 # permutations I (optimized)
