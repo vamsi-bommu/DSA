@@ -18,8 +18,8 @@ result = []
 subset_sums(0, 0, [1, 2, 1], result)
 print(result)
 
-# TC :
-# SC :
+# TC : O(2^N)
+# SC : O(N+2^N)  #N for stack space and 2^N for result
 
 
 # subset sum II
@@ -43,5 +43,5 @@ result = []
 subset_sum_II(0, [], sorted([1, 2, 2, 2, 3, 3]), result)
 print(result)
 
-# TC :
-# SC :
+# TC : O(2^N * N)  #N for appending a to result
+# SC : O(N+N+2^N)  #N for stack space and N for a and 2^N for result
