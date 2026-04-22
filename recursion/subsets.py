@@ -16,10 +16,10 @@ def subset_sums(i, a, arr, result):
 
 result = []
 subset_sums(0, 0, [1, 2, 1], result)
-print(result)
+print(sorted(result))
 
-# TC : O(2^N)
-# SC : O(N+2^N)  #N for stack space and 2^N for result
+# TC : O(2^n + 2^nlog(2^n))   we need to sort the result the result at the end which has length 2^n
+# SC : O(2^n)  result will have the size of 2^3=8
 
 
 # subset sum II
@@ -43,5 +43,6 @@ result = []
 subset_sum_II(0, [], sorted([1, 2, 2, 2, 3, 3]), result)
 print(result)
 
-# TC : O(2^N * N)  #N for appending a to result
-# SC : O(N+N+2^N)  #N for stack space and N for a and 2^N for result
+# TC : O(2^n x n)  Assuming that the length of a is approx n (can be k also)
+# SC : O(2^n x k)  Assuming that avg length of each subset is 'k'
+#      +O(n)  Auxiliary stack space
