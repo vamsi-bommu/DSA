@@ -46,5 +46,5 @@ perm(0, [1, 2, 3], r)
 print(r)
 
 
-# TC : O(N*N!)  #N for putting the array in result
-# SC : O(N+N!)     # N for stack space and N! for the result
+# TC : O(N*N!)         #N for putting the array in result
+# SC : O(N + N!xN)     # N for stack space and N! for the result and N is the size of each arr we append to result
