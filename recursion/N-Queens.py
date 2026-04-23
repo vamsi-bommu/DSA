@@ -51,8 +51,8 @@ n = 4
 n_queen(0, [["." for _ in range(n)] for _ in range(n)], ans, n)
 print(ans)
 
-# TC :
-# SC :
+# TC : O(n!*3n+ k.n^2) # where k is the number of solutions and adding it to the ans array will take O(n^2)
+# SC : O(n+n^2+ k.n^2) # n for stack space and n^2 for the 'm' and k.n^2 for the result
 
 
 # optimized approach
@@ -88,5 +88,5 @@ n_queen(
 )
 print(ans)
 
-# TC :
-# SC :
+# TC : O(n!+k*n^2)   where k is the number of solutions
+# SC : O(n+n+n^2+k*n^2)   # stack space + n [for rd + n for ud + n for ld combinely = O(3n) but taken just n] + n^2 for m + k*n^2 for ans
