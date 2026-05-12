@@ -23,14 +23,13 @@ DSA/
 ```
 
 ## 🚀 Progress
-- [ ] Arrays
-- [ ] Binary Search
-- [ ] Strings
-- [ ] Linked Lists
-- [ ] Recursion
-- [ ] Trees
-- [ ] Graphs
-- [ ] Dynamic Programming
-- [ ] ....
-- .....
+-  Arrays
+-  Binary Search
+-  Strings
+-  Linked Lists
+-  Recursion
+-  Trees
+-  Graphs
+-  Dynamic Programming
+-  ....
 
